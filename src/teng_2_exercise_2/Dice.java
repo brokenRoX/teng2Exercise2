@@ -17,7 +17,7 @@ public class Dice {
     Random rand; 
     
     public Dice() {
-        // write some code
+        this(6);
     }
     
     /**
@@ -25,9 +25,10 @@ public class Dice {
      * @param numOfEyes the number of sides (max eyes) the dice have.
      */
     public Dice( int numOfEyes ) {
-        // write some code
+        this.numberOfEyes = numOfEyes;
+        increaseNumberOfDices();
         this.rand = new Random();
-        System.out.println("DICE --> Constructor: Dice nr: " + numberOfDices 
+        System.out.println("DICE --> Constructor: Dice nr: " + numberOfDices
                 + " created with " + numberOfEyes + " eyes.");
     }
     
@@ -43,7 +44,7 @@ public class Dice {
      */
     private static void increaseNumberOfDices() {
         System.out.println("DICE --> Increasing number of dices.");
-        // write some code  
+        numberOfDices++;
     }
     
     /**
@@ -51,7 +52,7 @@ public class Dice {
      */
     private static void decreaseNumberOfDices() {
         System.out.println("DICE --> Decreasing number of dices.");
-        // write some code  
+        numberOfDices--;
     }
     
     /** 
@@ -60,17 +61,17 @@ public class Dice {
      */
     public static int getNumberOfDices() {
         System.out.println("DICE --> Returning number of dices.");
-        return 0; // write some code --> you need to find the correct return value
+        return numberOfDices;
     }
     
     public int getNumberOfEyes() {
         System.out.println("DICE --> Returning number of dice eyes.");
-        return 0; // write some code --> you need to find the correct return value
+        return numberOfEyes;
     }
     
     public int throwDice() {
         System.out.println("DICE --> Throwing the dice.");
-        return 0; // write some code --> you need to find the correct return value
+        return getRandomNumberInRange(1, numberOfEyes);
     }
     
     public int[] throwDiceNTimes(int n) {
@@ -78,7 +79,7 @@ public class Dice {
         // write some code
         return new int[1]; // write some code --> you need to find the correct return value
     }
-    
+
     public static int throwDices(Dice... dices){
         // write some code
         return 0; // write some code --> you need to find the correct return value
